@@ -1,0 +1,7 @@
+{
+  "name": "fizzbuzz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Daniel Maldonado <daniel.maldonado@bluealba.com>",
+  "license": "MIT"
+}
