@@ -1,19 +1,29 @@
 const { range } = require("lodash")
+
+const EMPTY_STRING = ""
 const FIZZ = "Fizz"
 const BUZZ = "Buzz"
 
 function makeFizzBuzz(from, to) {
-  const listOfNumbers = [...range(from, to), to]
-  return listOfNumbers.map(toFizzBuzz)
+  return makeRange(from, to).map(toFizzBuzz)
+}
+function makeRange(from, to) {
+  return [...range(from, to), to]
 }
 function toFizzBuzz(n) {
-  if (n % 3 === 0) {
-    return FIZZ
-  }
-  if (n % 5 === 0) {
-    return BUZZ
-  }
-  return `${n}`
+  let result = write(FIZZ, EMPTY_STRING, whenMultipleOf(3, n))
+  result = write(BUZZ, result, whenMultipleOf(5, n))
+  return result === EMPTY_STRING
+    ? n.toString()
+    : result
+}
+function write(word, result, condition) {
+  return condition
+    ? result + word
+    : result
+}
+function whenMultipleOf(multiple, n) {
+  return n % multiple === 0
 }
 
 module.exports = makeFizzBuzz;

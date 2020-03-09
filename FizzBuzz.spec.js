@@ -21,3 +21,10 @@ describe("FizzBuzz - when prints numbers from 8 to 10", () => {
     expect(actual).toEqual(["8", "Fizz", "Buzz"])
   })
 })
+describe("FizzBuzz - when prints numbers from 13 to 15", () => {
+
+  it("should print 13 and 14 as it is and FizzBuzz instead of 15", () => {
+    const actual = makeFizzBuzz(13, 15)
+    expect(actual).toEqual(["13", "14", "FizzBuzz"])
+  })
+})
